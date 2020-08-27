@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>
+#include <future>
 #include "TrafficLight.h"
 
 /* Implementation of class "MessageQueue" */
@@ -32,11 +33,11 @@ void MessageQueue<T>::send(TrafficLightPhase &&msg)
 
 /* Implementation of class "TrafficLight" */
 
-/*
+
 TrafficLight::TrafficLight()
 {
     _currentPhase = TrafficLightPhase::red;
-}*/
+}
 
 
 void TrafficLight::waitForGreen()
@@ -73,12 +74,13 @@ void TrafficLight::cycleThroughPhases()
     std::mt19937 generator(device());
     std::uniform_int_distribution<int> distribution(4,6);
     while(true){
-        auto start = std::chrono::high_resolution_clock::now();
-        getCurrentPhase() == TrafficLightPhase::green ? _currentPhase = TrafficLightPhase::red : _currentPhase = TrafficLightPhase::green;
+        //auto start = std::chrono::high_resolution_clock::now();
         std::this_thread::sleep_for(std::chrono::seconds(distribution(generator)));
-        auto finish = std::chrono::high_resolution_clock::now();
-        auto msg = _currentPhase;
-        _messageQueue.send(std::move(msg));
+        _currentPhase == TrafficLightPhase::red ? _currentPhase = TrafficLightPhase::green : _currentPhase = TrafficLightPhase::red;
+        //auto finish = std::chrono::high_resolution_clock::now();
+        auto phase = _currentPhase;
+        auto sent = std::async(std::launch::async, &MessageQueue<TrafficLightPhase>::send, &_messageQueue, std::move(phase));
+        sent.wait();
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
 }

@@ -52,7 +52,7 @@ public:
     void simulate();
 
 private:
-    TrafficLightPhase _currentPhase;
+    TrafficLightPhase _currentPhase = red;
     // typical behaviour methods
     void cycleThroughPhases();
 

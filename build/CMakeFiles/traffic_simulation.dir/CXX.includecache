@@ -6,13 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/TrafficLight.cpp
+/home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/Intersection.cpp
 iostream
+-
+thread
+-
+chrono
+-
+future
 -
 random
 -
+Street.h
+/home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/Street.h
+Intersection.h
+/home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/Intersection.h
+Vehicle.h
+/home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/Vehicle.h
+
+/home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/Intersection.h
+vector
+-
+future
+-
+mutex
+-
+memory
+-
+TrafficObject.h
+/home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/TrafficObject.h
 TrafficLight.h
 /home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/TrafficLight.h
+
+/home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/Street.h
+TrafficObject.h
+/home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/TrafficObject.h
 
 /home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/TrafficLight.h
 mutex
@@ -33,4 +61,8 @@ thread
 -
 mutex
 -
+
+/home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/Vehicle.h
+TrafficObject.h
+/home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/TrafficObject.h
 
