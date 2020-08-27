@@ -22,7 +22,7 @@ class MessageQueue
 {
 public:
 void send(TrafficLightPhase &&msg);
-TrafficLightPhase receive();
+T receive();
 
 private:
 std::deque<TrafficLightPhase> _queue;
