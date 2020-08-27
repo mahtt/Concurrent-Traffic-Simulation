@@ -21,6 +21,8 @@ deque
 -
 condition_variable
 -
+chrono
+-
 TrafficObject.h
 /home/martin/Documents/DEV/C++Nanodegree/Concurrent-Traffic-Simulation/src/TrafficObject.h
 

@@ -4,6 +4,7 @@
 #include <mutex>
 #include <deque>
 #include <condition_variable>
+#include <chrono>
 #include "TrafficObject.h"
 
 // forward declarations to avoid include cycle
